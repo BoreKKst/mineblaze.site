@@ -2,31 +2,122 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MineBlaze — Магазин</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #080b12;
-      color: white;
-      font-family: Arial, sans-serif;
-      display: grid;
-      place-items: center;
-      text-align: center;
-    }
-    main { padding: 24px; }
-    h1 { color: #62d9ff; font-size: 42px; }
-    p { color: #b8c4d8; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b18">
+<title>MineBlaze — Анархия</title>
+<style>
+:root{--bg:#080b18;--panel:#11162a;--blue:#65d9ff;--purple:#a78bfa;--text:#f4f6ff;--muted:#a4acc6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 80% 0%,#25204c 0,transparent 42%),var(--bg);color:var(--text);font:16px/1.6 system-ui,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:5;background:#080b18ed;backdrop-filter:blur(14px);border-bottom:1px solid #ffffff15}
+nav{max-width:1100px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-size:23px;font-weight:900;letter-spacing:1px}.logo span{color:var(--blue)}
+.links{display:flex;gap:17px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.links a:hover{color:var(--blue)}
+main{max-width:1100px;margin:auto;padding:30px 20px}
+.hero{min-height:410px;display:flex;flex-direction:column;justify-content:center;padding:45px 0}
+.tag{color:var(--blue);font-weight:800;letter-spacing:3px;font-size:12px}
+h1{font-size:clamp(42px,8vw,76px);line-height:1.05;margin:16px 0;background:linear-gradient(100deg,#fff,var(--blue),var(--purple));background-clip:text;color:transparent}
+h2{font-size:30px;margin:0 0 10px}
+p{color:var(--muted)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-block;padding:12px 19px;border-radius:12px;background:linear-gradient(110deg,#52cfff,#a78bfa);color:#080b18;font-weight:800;border:0;cursor:pointer}
+.btn.secondary{background:#ffffff0b;color:white;border:1px solid #ffffff25}
+section{padding:32px 0;scroll-margin-top:75px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:22px}
+.card{padding:21px;border-radius:18px;background:linear-gradient(145deg,#171d35,#0e1223);border:1px solid #ffffff12;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#65d9ff66}
+.card h3{margin:0 0 7px;font-size:19px}
+.price{font-size:24px;font-weight:900;color:var(--blue);margin:12px 0}
+.small{font-size:13px;color:var(--muted)}
+.notice{padding:16px;border:1px solid #a78bfa55;border-radius:14px;background:#a78bfa0b}
+ul{padding-left:22px;color:var(--muted)}
+li{margin:7px 0}
+footer{border-top:1px solid #ffffff18;text-align:center;padding:28px 15px;color:var(--muted)}
+@media(max-width:600px){nav{align-items:flex-start;flex-direction:column}.links{gap:12px}.hero{min-height:330px;padding:30px 0}main{padding:20px 16px}}
+</style>
 </head>
 <body>
-  <main>
-    <h1>☾ MineBlaze</h1>
-    <h2>Магазин анархии</h2>
-    <p>Привилегии · Кейсы · Лунары</p>
-    <p>Скоро открытие магазина!</p>
-  </main>
+<header><nav>
+<a class="logo" href="#home">☾ MINE<span>BLAZE</span></a>
+<div class="links">
+<a href="#rules">Правила</a><a href="#donate">Донат</a>
+<a href="#currency">Валюты</a><a href="#cases">Кейсы</a>
+<a href="#contacts">Контакты</a>
+</div>
+</nav></header>
+<main>
+<section class="hero" id="home">
+<div class="tag">MINEBLAZE • ANARCHY</div>
+<h1>ТВОЯ АНАРХИЯ.<br>ТВОИ ПРАВИЛА.</h1>
+<p>Мир без гарантий. Ресурсы имеют цену, доверие опасно, а выживание зависит только от тебя.</p>
+<div class="actions">
+<a class="btn" href="#donate">Открыть магазин</a>
+<a class="btn secondary" href="https://discord.gg/cSzWeChfn" target="_blank" rel="noopener">Наш Discord</a>
+<a class="btn secondary" href="https://t.me/mineblazestudio" target="_blank" rel="noopener">Telegram</a>
+</div>
+<p class="small">IP сервера: уточни актуальный адрес в нашем Discord.</p>
+</section>
+
+<section id="rules">
+<div class="tag">ЗАКОНЫ МИРА</div><h2>Правила анархии</h2>
+<p>Свобода действий не отменяет правила общения и безопасности сервера.</p>
+<div class="grid">
+<article class="card"><h3>⚔️ Разрешено</h3><ul><li>PvP и сражения</li><li>Гриферство и разрушение построек</li><li>Кража ресурсов и предметов</li><li>Рейды и борьба за территории</li></ul></article>
+<article class="card"><h3>🚫 Запрещено</h3><ul><li>Читы и запрещённые модификации</li><li>Спам и флуд</li><li>Реклама других серверов без разрешения</li><li>Выдача себя за администрацию</li><li>Эксплуатация ошибок и намеренная перегрузка сервера</li></ul></article>
+<article class="card"><h3>🛡️ Наказания</h3><p>В зависимости от нарушения администрация может выдать предупреждение, мут, кик или временный/постоянный бан. Точный срок зависит от обстоятельств и действующей таблицы наказаний.</p></article>
+</div>
+</section>
+
+<section id="donate">
+<div class="tag">ПОДДЕРЖКА ПРОЕКТА</div><h2>Привилегии</h2>
+<p>Цены указаны в рублях и тенге. Описание возможностей привилегий нужно заполнить в конфигурации проекта.</p>
+<div class="grid" id="ranks"></div>
+</section>
+
+<section id="currency">
+<div class="tag">ИГРОВАЯ ЭКОНОМИКА</div><h2>Валюты</h2>
+<div class="grid">
+<article class="card"><h3>🌙 Лунары</h3><p>Игровая валюта MineBlaze. Используется для поддерживаемых сервером покупок.</p></article>
+<article class="card"><h3>🪙 Монеты</h3><p>Отдельная игровая валюта. Не смешивается с Лунарами.</p></article>
+</div>
+</section>
+
+<section id="cases">
+<div class="tag">ИСПЫТАЙ УДАЧУ</div><h2>Кейсы</h2>
+<div class="grid" id="case-list"></div>
+</section>
+
+<section id="contacts">
+<div class="tag">СВЯЗЬ</div><h2>Контакты</h2>
+<div class="notice">Покупки и реальные платежи пока недоступны. Не отправляй деньги до подключения проверенной платёжной системы.</div>
+<div class="actions">
+<a class="btn" href="https://discord.gg/cSzWeChfn" target="_blank" rel="noopener">Discord</a>
+<a class="btn secondary" href="https://t.me/mineblazestudio" target="_blank" rel="noopener">Telegram</a>
+</div>
+</section>
+</main>
+<footer>☾ MineBlaze · Анархия · Все права защищены<br><span class="small">Информация о товарах и ценах может обновляться.</span></footer>
+<script>
+const products=[
+{name:"Starlight",rub:50,kzt:265,type:"rank"},
+{name:"Lunacy",rub:200,kzt:1060,type:"rank"},
+{name:"Moonlord",rub:150,kzt:795,type:"rank"},
+{name:"Celestial",rub:120,kzt:636,type:"rank"},
+{name:"Astral",rub:0,kzt:0,type:"rank"},
+{name:"Nebula",rub:50,kzt:265,type:"rank"},
+{name:"Eclipse",rub:99,kzt:525,type:"rank"},
+{name:"Lunar",rub:35,kzt:185,type:"rank"},
+{name:"Luni Case",rub:19,kzt:100,type:"case"},
+{name:"Donate Case",rub:25,kzt:132,type:"case"},
+{name:"Лунары — 7 шт.",rub:19,kzt:100,type:"case"}
+];
+function card(p){return `<article class="card"><h3>${p.name}</h3><p>${p.type==="rank"?"Игровая привилегия. Состав возможностей уточняется.":p.name==="Luni Case"?"Кейс с Лунарами.":"Кейс с привилегией."}</p><div class="price">${p.rub} ₽</div><div class="small">${p.kzt} ₸</div><p class="small">Оплата временно недоступна</p></article>`}
+document.getElementById("ranks").innerHTML=products.filter(p=>p.type==="rank").map(card).join("");
+document.getElementById("case-list").innerHTML=products.filter(p=>p.type==="case").map(card).join("");
+</script>
 </body>
 </html>
